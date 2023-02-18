@@ -7,6 +7,7 @@ a {
     text-decoration: none;
 }
 body {
+  position: relative;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -120,6 +121,9 @@ hr{
 .Experienses-container{
     padding: 30px 0 20px 0;
     background-color: #DBE2EF;
+}
+.Experienses-container table tr{
+  height: 46px;
 }
 .left-td{
     width:30%
