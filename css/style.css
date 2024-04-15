@@ -16,6 +16,29 @@ body {
     color: #434242;
     z-index: -2;
 }
+.top-right-nav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #3f71af89;
+  padding: 4px 8px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.contact-ref-nav {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.contact-ref-nav:hover {
+  color: rgba(255, 255, 255, 0.565);
+}
+.contact-icon-nav {
+  width:30px;
+}
 h1 {
     padding-top: 180px;
     margin: 0 auto;
@@ -57,19 +80,32 @@ hr{
     position: relative;
     z-index: -2;
 }
+@keyframes moveRight {
+  0%, 100% { left: -500px; }
+  50% { left: 100%; }
+}
+
+@keyframes moveLeft {
+  0%, 100% { right: -500px; }
+  50% { right: 100%; }
+}
+
 .cloud-img-left {
     position: fixed;
     width: 500px;
     left: 100px;
     top: 100px;
     z-index: -1;
+    animation: moveRight 40s linear infinite;
 }
+
 .cloud-img-right {
     position: fixed;
     width: 500px;
     right: 100px;
-    top:230px;
-    z-index:-1;
+    top: 230px;
+    z-index: -1;
+    animation: moveLeft 40s linear infinite;
 }
 .mount-img{
     position: relative;
@@ -98,17 +134,22 @@ hr{
 }
 .about-me {
     vertical-align: top;
-    width:350px;
+    width:360px;
 }
 .profile-pic{
+    margin-top: 100px;
+    margin-left: 50px;
     padding: 20px;
-    width:200px;
+    width:260px;
 }
 .profile-pic img {
     position: relative;
     border: solid 3px #3F72AF;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 50%;
-    width: 200px;
 }
 .details{
     vertical-align: top;
