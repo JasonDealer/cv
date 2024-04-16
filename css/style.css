@@ -80,37 +80,55 @@ hr{
     position: relative;
     z-index: -2;
 }
-@keyframes moveRight {
-  0%, 100% { left: -500px; }
-  50% { left: 100%; }
+@keyframes startMoveRight {
+  from { left: 400px; }
+  to { left: 100%; }
 }
 
-@keyframes moveLeft {
-  0%, 100% { right: -500px; }
-  50% { right: 100%; }
+@keyframes startMoveRight2 {
+  from { left: 900px; }
+  to { left: 100%; }
+}
+@keyframes startMoveRight3 {
+  from { left: 10px; }
+  to { left: 100%; }
+}
+
+@keyframes moveRight {
+  from { left: -500px; }
+  to { left: 100%; }
 }
 
 .cloud-img-left {
-    position: fixed;
-    width: 500px;
-    left: 100px;
-    top: 100px;
-    z-index: -1;
-    animation: moveRight 40s linear infinite;
+  position: fixed;
+  width: 500px;
+  top: 170px;
+  z-index: -1;
+  animation: startMoveRight 20s linear forwards, moveRight 40s linear infinite 20s;
 }
 
 .cloud-img-right {
-    position: fixed;
-    width: 500px;
-    right: 100px;
-    top: 230px;
-    z-index: -1;
-    animation: moveLeft 40s linear infinite;
+  position: fixed;
+  width: 500px;
+  top: 100px;
+  left: 900px;
+  z-index: -1;
+  animation: startMoveRight2 10s linear forwards, moveRight 60s linear infinite 10s;
 }
+
+.cloud-img-middle {
+  position: fixed;
+  width: 500px;
+  top: 50px;
+  left: 10px;
+  z-index: -1;
+  animation: startMoveRight3 45s linear forwards, moveRight 80s linear infinite 45s; 
+}
+
 .mount-img{
     position: relative;
     width: 100%;
-    margin-top: 280px;
+    margin-top: 40vh;
     bottom: -6px;
 }
 .name-main{
@@ -163,11 +181,14 @@ hr{
     padding: 30px 0 20px 0;
     background-color: #DBE2EF;
 }
+.Experienses-container table {
+  width: 100%;
+}
 .Experienses-container table tr{
   height: 46px;
 }
 .left-td{
-    width:30%
+    width: 30%;
 }
 .Abilities-container{
     padding: 30px 0 20px 0;
@@ -458,4 +479,205 @@ transform: translateY(-50%);
 }
 .features{
     text-align: left;
+}
+.skills-grid {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.skills-table td {
+  vertical-align: top;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.skills-table tr > td:first-child table tr td:first-child {
+  width: 45%;
+}
+
+.skills-table tr > td:first-child table tr td:last-child,
+.skills-table tr > td:last-child table tr td:last-child {
+  width: 55%;
+}
+
+.rating-result {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.rating-result span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.projects-container-alt {
+  display: none;
+}
+footer {
+  background-color: #2C3E50; /* Темный фон для подвала */
+  color: #ffffff; /* Белый текст для контраста */
+  text-align: center; /* Центрирование текста */
+  padding: 20px 0; /* Паддинг сверху и снизу */
+  font-size: 16px; /* Размер шрифта */
+}
+.footer-container {
+  width: 100%; /* Ширина контейнера */
+  max-width: 1200px; /* Максимальная ширина */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 20px; /* Паддинг справа и слева */
+}
+
+
+@media (max-width: 1130px) and (min-width: 768px) {
+  .wrapper {
+      width: 80%;
+  }
+  .h1, .h2 {
+      font-size: 60px;
+  }
+  .h3, .h4 {
+      font-size: 22px;
+  }
+  .profile-pic img, .profile-pic {
+      width: 200px;
+      height: 200px;
+  }
+  .inline-container {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+  }
+  .about-me, .details {
+      width: auto;
+  }
+  .inst-btn {
+      width: 120px;
+  }
+  .cloud-img-left, .cloud-img-right {
+      width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+      width: 95%;
+  }
+  .h1, .h2 {
+      font-size: 40px;
+  }
+  .h3, .h4 {
+      font-size: 18px;
+  }
+  .profile-pic img, .profile-pic {
+      width: 150px;
+      height: 150px;
+  }
+  .inline-container {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+  }
+  .about-me, .details {
+      width: auto;
+  }
+  .inst-btn {
+      width: 100px;
+  }
+  .cloud-img-left, .cloud-img-right {
+      display: none;
+  }
+  .contact-icon-nav, .contact-icon {
+      width: 25px;
+  }
+  .contact-ref, .contact-ref-nav {
+      font-size: 18px;
+  }
+  .slide__text-heading {
+      font-size: 30px;
+  }
+  .slide__text-desc, .slide__text-link {
+      font-size: 16px; 
+  }
+  .size-slider-container, .slider-container {
+      height: 400px; 
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profile-pic img, .profile-pic {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+  }
+
+  .mount-img, .cloud-img-left, .cloud-img-right {
+      width: 100%;
+      position: static;
+      animation: none;
+  }
+
+  .name-main {
+      position: static;
+      transform: none;
+      margin-top: 20px;
+  }
+
+  .slider {
+      overflow: hidden; 
+  }
+
+  .slide__content {
+      width: auto;
+  }
+  .skills-table {
+    display: block;
+  }
+
+  .skills-table td {
+      display: block; 
+      padding: 5px 0;
+  }
+
+  .skills-table table {
+      margin-bottom: 20px;
+  }
+  nav {
+    display: none
+  }
+  .projects-container-alt {
+    display: block;
+  }
+  .projects-container {
+    display: none;
+  }
+  .contact-table,
+    .contact-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .contact-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .contact-table table {
+        margin-bottom: 20px;
+    }
 }
